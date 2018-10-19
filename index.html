@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>capture screen</title>
+    <link rel="stylesheet" href="/css/CvVideo.css?0" />
+    <script type="text/javascript" src="/js/CvVideo.js?0"></script>
+</head>
+<body>
+    <button style="margin:5px 0 0 10px;width:80px;height:30px;border:1px solid #ccc;" onclick="goNext();">NEXT</button>
+    <button style="margin:5px 0 0 10px;width:80px;height:30px;border:1px solid #ccc;" onclick="showPop();">pop up</button>
+    <div style="width:320px;border:1px solid #ccc; overflow:hidden;" id="testVideo"></div>
+    <script type="text/javascript">
+        var cfg = {
+            url: '/images/20180831.mp4',
+            autoPlay: true,
+            container: document.getElementById('testVideo'),
+            callbacks:{
+                endCallback: function(){ 
+                    alert(123);
+                }
+            }
+        };
+        //CvVideo.open(cfg);
+        
+        function showPop() {
+            cfg.container = null;
+            CvVideo.open(cfg);
+        }
+
+    </script>
+</body>
+</html>
